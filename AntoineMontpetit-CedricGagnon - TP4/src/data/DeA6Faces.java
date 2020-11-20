@@ -56,7 +56,8 @@ public class DeA6Faces
 
 	public static void main(String[] args)
 	{
-		DeA6Faces test = new DeA6Faces((byte) 5);
+		DeA6Faces test = new DeA6Faces((byte) 6);
+		System.out.println(test);
 		/*
 		 * int[] tally = {0,0,0,0,0,0}; for (int i = 0; i < 1000; i++) {
 		 * test.brasser(); tally[test.getFaceVisible()-1]++; }
