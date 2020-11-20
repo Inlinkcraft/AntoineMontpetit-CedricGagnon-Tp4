@@ -1,0 +1,13 @@
+package data;
+
+/**
+ * 
+ * @author Antoine Montpetit
+ * @version automne 2020
+ * 
+ */
+public class MainDe5Des {
+	
+	private DeA6Faces[] mainDeDes;
+	private static final byte  NBR_DE_DES;
+}

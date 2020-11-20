@@ -1,0 +1,31 @@
+package data;
+
+/**
+ * 
+ * @author Antoine Montpetit
+ * @version automne 2020
+ * 
+ */
+public class MainDe5Des {
+	
+	/**
+	 * main de dés
+	 */
+	private DeA6Faces[] mainDeDes;
+	
+	/**
+	 * Nombre de dée total
+	 */
+	private static final byte  NBR_DE_DES = 5;
+	
+	public MainDe5Des() {
+		this()
+	}
+	
+	public MainDe5Des(byte[] tabFaceVsible) {
+		mainDeDes = new DeA6Faces[tabFaceVsible.length];
+		for (int i = 0; i < mainDeDes.length; i++){
+			
+		}
+	}
+}
