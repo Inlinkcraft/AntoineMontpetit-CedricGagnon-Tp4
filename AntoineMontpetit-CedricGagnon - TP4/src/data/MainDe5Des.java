@@ -8,8 +8,6 @@ package data;
  */
 public class MainDe5Des {
 
-	// VARS //
-
 	/**
 	 * main de dés
 	 */
@@ -19,8 +17,6 @@ public class MainDe5Des {
 	 * Nombre de dée total
 	 */
 	private static final byte NBR_DE_DES = 5;
-
-	// CONSTRUCTOR //
 
 	/**
 	 * Crée le tableau de 5 dés et ajoute des dés dedans.
@@ -37,16 +33,21 @@ public class MainDe5Des {
 	 * @param tabFaceVsible - un tableau de 5 valeurs, les faces visibles des dés.
 	 */
 	public MainDe5Des(byte[] tabFaceVsible) {
+		if (validerNoDe((byte)tabFaceVsible.length)) {
+			mainDeDes = new DeA6Faces[tabFaceVsible.length];
 
-		mainDeDes = new DeA6Faces[tabFaceVsible.length];
+			for (int i = 0; i < mainDeDes.length; i++) {
+				mainDeDes[i] = new DeA6Faces(tabFaceVsible[i]);
+			}
+		}else {
+			mainDeDes = new DeA6Faces[NBR_DE_DES];
 
-		for (int i = 0; i < mainDeDes.length; i++) {
-			mainDeDes[i] = new DeA6Faces(tabFaceVsible[i]);
+			for (int i = 0; i < mainDeDes.length; i++) {
+				mainDeDes[i] = new DeA6Faces();
+			}
 		}
 
 	}
-
-	// METHOD
 
 	/**
 	 * Brasse le dé dont le numéro est "noDe", s'il est valide.
@@ -72,23 +73,247 @@ public class MainDe5Des {
 	}
 	
 	/**
+	 * Compte le nombre de dés selon la valeur de la face visible. Compte le nombre de 1, de 2, de 3 et ainsi de suite selon la face visible de chaque dé de la main. Cette méthode sera utile à toutes les méthodes evaluer.
+	 *
+	 * Exemple pour la main de 5 dés suivante:
+	 * 
+	 * No. du dé :  1   2   3   4   5
+	 * Valeur    : [4] [5] [1] [4] [3]
+	 * 
+	 * Le tableau de sortie aurait les valeurs suivantes:
+	 * 
+	 * valeur du dé  :   1   2   3   4   5   6
+	 *       indice        :   0   1   2   3   4   5
+	 *       Nombre de fois:  [1] [0] [1] [2] [1] [0]
+	 * La main possède donc un 1, zéro 2, un 3, deux 4, un 5 et zéro 6
+	 * 
+	 * @return - un tableau de byte dont chaque élément représente le nombre de dés d'une certaine valeur.
+	 */
+	private byte[] compterValeurDes() {
+		byte[] compte = {0,0,0,0,0,0};
+		for (int i = 0; i < mainDeDes.length; i++) {
+			compte[mainDeDes[i].getFaceVisible() - 1]++;
+		}
+		return compte;
+	}
+	
+	/**
+	 * Évalue si la main de dés équivaut à 3 égaux.
+	 * @return - true si la main contient un brelan
+	 */
+	private boolean evaluerBrelan() {
+		byte[] compte = compterValeurDes();
+		boolean estBrelan = false;
+		for (int i = 0; i < compte.length; i++) {
+			if(compte[i] == 3) {
+				estBrelan = true;
+			}
+		}
+		return estBrelan;
+	}
+	
+	/**
+	 * Évalue si la main de dés équivaut à 5 égaux.
+	 * @return - true si la main est à chiffre pareil
+	 */
+	private boolean evaluerCinqEgaux() {
+		byte[] compte = compterValeurDes();
+		boolean estCinqEgaux = false;
+		for (int i = 0; i < compte.length; i++) {
+			if(compte[i] == 5) {
+				estCinqEgaux = true;
+			}
+		}
+		return estCinqEgaux;
+	}
+	
+	/**
+	 * Évalue si la main de dés équivaut à 2 paires.
+	 * @return - true si la main contien deux paires
+	 */
+	private boolean evaluerDeuxPaires() {
+		byte[] compte = compterValeurDes();
+		boolean estPair = false;
+		boolean estDeuxPair = false;
+		for (int i = 0; i < compte.length; i++) {
+			if(compte[i] == 2) {
+				if(!estPair) {
+					estPair = true;
+				}else{
+					estDeuxPair = true;
+				}
+			}
+		}
+		return estDeuxPair;
+	}
+	
+	/**
+	 * Évalue si la main de dés équivaut à un brelan et une paire.
+	 * @return - true si la main contien un brelan et une paire
+	 */
+	private boolean evaluerFull() {
+		return evaluerBrelan() && evaluerUnePaire();
+	}
+	
+	/**
+	 * Évalue la main de dés selon la séquence reçue en paramètre. Se sert de toutes les autres méthodes evaluer. L'ordre d'évaluation est important.
+	 * @param sequence - la sequence a évaluer
+	 * @return - true si la sequence demander est contenue dans la main
+	 */
+	public boolean evaluerMainDeDes(SequenceDeDes sequence){
+		boolean estSequence = false;
+		switch(sequence) {
+		case BRELAN:
+			estSequence = evaluerBrelan();
+			break;
+		case CINQ_EGAUX:
+			estSequence = evaluerCinqEgaux();
+			break;
+		case DEUX_PAIRES:
+			estSequence = evaluerDeuxPaires();
+			break;
+		case FULL:
+			estSequence = evaluerFull();
+			break;
+		case QUATRE_EGAUX:
+			estSequence = evaluerQuatreEgaux();
+			break;
+		case SERIE_COURTE:
+			estSequence = evaluerSerieCourte();
+			break;
+		case SERIE_LONGUE:
+			estSequence = evaluerSerieLongue();
+			break;
+		case UNE_PAIRE:
+			estSequence = evaluerUnePaire();
+			break;
+		}
+		
+		return estSequence;
+	}
+	
+	/**
+	 * Évalue si la main de dés équivaut à 4 égaux.
+	 * @return - true si la main contient quatre dé egaux
+	 */
+	private boolean evaluerQuatreEgaux() {
+		byte[] compte = compterValeurDes();
+		boolean estQuatreEgaux = false;
+		for (int i = 0; i < compte.length; i++) {
+			if(compte[i] == 4) {
+				estQuatreEgaux = true;
+			}
+		}
+		return estQuatreEgaux;
+	}
+	
+	/**
+	 * Évalue si la main de dés équivaut à une série courte soit 1,2,3,4 ou 2,3,4,5 ou 3,4,5,6
+	 * @return - true si la main contient une série courte
+	 */
+	private boolean evaluerSerieCourte() {
+		byte[] compte = compterValeurDes();
+		boolean estSerieQuatre = false;
+		int suite = 0;
+		for (int i = 0; i < compte.length; i++) {
+			if(compte[i] > 0) {
+				suite++;
+			}else{
+				suite = 0;
+			}
+			if(suite == 4) {
+				estSerieQuatre = true;
+			}
+		}
+		
+		return estSerieQuatre;
+	}
+	
+	/**
+	 * Évalue si la main de dés équivaut à une série longue soit 1,2,3,4,5 ou 2,3,4,5,6
+	 * @return - true si la main contient une série longue
+	 */
+	private boolean evaluerSerieLongue() {
+		byte[] compte = compterValeurDes();
+		boolean estSerieCinq = false;
+		int suite = 0;
+		for (int i = 0; i < compte.length; i++) {
+			if(compte[i] > 0) {
+				suite++;
+			}else{
+				suite = 0;
+			}
+			if(suite == 5) {
+				estSerieCinq = true;
+			}
+		}
+		
+		return estSerieCinq;
+	}
+	
+	/**
+	 * Évalue si la main de dés équivaut à une paire.
+	 * @return - true si la main contien une paire
+	 */
+	private boolean evaluerUnePaire() {
+		byte[] compte = compterValeurDes();
+		boolean estPair = false;
+		for (int i = 0; i < compte.length; i++) {
+			if(compte[i] == 2) {
+				estPair = true;
+			}
+		}
+		return estPair;
+	}
+	
+	/**
+	 * Retourne le nombre de dés dans la main.
+	 * @return - le nombre de dés dans la main
+	 */
+	public byte getNbrDes() {
+		return (byte)mainDeDes.length;
+	}
+	
+	/**
 	 * Retourne la valeur visible du dé numéro "noDe" ou -1 si le numéro de dé n'est pas valide.
 	 * 
 	 * @param noDe
-	 * @return
+	 * @return - la valeur visible du dé demander si ce numero n'est pas valide -1 sera reçut
 	 */
 	public byte getValeurDeNo(byte noDe) {
 		// hey nous avons généré ceci qui fait le travail en une ligne :D
 		return (byte) (((noDe< mainDeDes.length && noDe >= 0) ? 1:0) * noDe+((noDe < mainDeDes.length && noDe >= 0) ? 1:0)-1);
 	}
 	
-	
+	/**
+	 * Utilise toStringMainDeDes
+	 */
+	public String toString() {
+		return toStringMainDeDes();
+	}
 	
 	/**
-	 * Sert à tester nos méthodes
-	 * @param args - ?
+	 * Retourne une chaîne de caractères qui représente la main de dés selon le format suivant:
+	 *        No. du dé :  1   2   3   4   5
+	 *        Valeur    : [4] [5] [1] [4] [3]
+	 *        
+	 * @return - le string de la main
 	 */
-	public static void main(String[] args) {
-		//hey ;P
+	public String toStringMainDeDes() {
+		return "No. du dé :  1   2   3   4   5   6\nValeur    : ["
+				+ mainDeDes[0].getFaceVisible() + "] ["
+				+ mainDeDes[1].getFaceVisible() + "] ["
+				+ mainDeDes[2].getFaceVisible() + "] ["
+				+ mainDeDes[3].getFaceVisible() + "] ["
+				+ mainDeDes[4].getFaceVisible();
+	}
+	
+	/**
+	 * Valide si le "noDe" est bien entre 1 et le maximun de dés dans la main.
+	 * @param noDe - le nombre de dés à valider
+	 * @return - vrai si la main de dés équivaut à la séquence demandée, sinon faux
+	 */
+	private static boolean validerNoDe(byte noDe) {
+		return noDe > 0 && noDe < NBR_DE_DES;
 	}
 }
