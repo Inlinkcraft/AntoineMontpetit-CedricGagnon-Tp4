@@ -2,6 +2,8 @@ package data;
 
 /**
  * 
+ * Classe représentant une main de 5 dés
+ * 
  * @author Antoine Montpetit
  * @version automne 2020
  * 
@@ -14,7 +16,7 @@ public class MainDe5Des {
 	private DeA6Faces[] mainDeDes;
 
 	/**
-	 * Nombre de dée total
+	 * Nombre de dés total
 	 */
 	private static final byte NBR_DE_DES = 5;
 
@@ -30,7 +32,7 @@ public class MainDe5Des {
 	 * représentent les faces visibles des 5 dés. Utilise le constructeur de dé avec
 	 * paramètre. Très utile pour faire des tests de la présente classe
 	 * 
-	 * @param tabFaceVsible - un tableau de 5 valeurs, les faces visibles des dés.
+	 * @param tabFaceVsible - Un tableau de 5 valeurs, les faces visibles des dés.
 	 */
 	public MainDe5Des(byte[] tabFaceVsible) {
 		if (validerNoDe((byte)tabFaceVsible.length)) {
@@ -52,7 +54,7 @@ public class MainDe5Des {
 	/**
 	 * Brasse le dé dont le numéro est "noDe", s'il est valide.
 	 * 
-	 * @param noDe - Index du dée à brassé
+	 * @param noDe - Index du dé à brasser
 	 */
 	public void brasserDeNo(byte noDe) {
 		mainDeDes[noDe].brasser();
@@ -114,7 +116,7 @@ public class MainDe5Des {
 	
 	/**
 	 * Évalue si la main de dés équivaut à 5 égaux.
-	 * @return - true si la main est à chiffre pareil
+	 * @return - true si la main a 5 chiffres pareils
 	 */
 	private boolean evaluerCinqEgaux() {
 		byte[] compte = compterValeurDes();
@@ -129,7 +131,7 @@ public class MainDe5Des {
 	
 	/**
 	 * Évalue si la main de dés équivaut à 2 paires.
-	 * @return - true si la main contien deux paires
+	 * @return - true si la main contient deux paires
 	 */
 	private boolean evaluerDeuxPaires() {
 		byte[] compte = compterValeurDes();
@@ -149,7 +151,7 @@ public class MainDe5Des {
 	
 	/**
 	 * Évalue si la main de dés équivaut à un brelan et une paire.
-	 * @return - true si la main contien un brelan et une paire
+	 * @return - true si la main contient un brelan et une paire
 	 */
 	private boolean evaluerFull() {
 		return evaluerBrelan() && evaluerUnePaire();
@@ -157,8 +159,8 @@ public class MainDe5Des {
 	
 	/**
 	 * Évalue la main de dés selon la séquence reçue en paramètre. Se sert de toutes les autres méthodes evaluer. L'ordre d'évaluation est important.
-	 * @param sequence - la sequence a évaluer
-	 * @return - true si la sequence demander est contenue dans la main
+	 * @param sequence - la séquence à évaluer
+	 * @return - true si la séquence demandée est contenue dans la main
 	 */
 	public boolean evaluerMainDeDes(SequenceDeDes sequence){
 		boolean estSequence = false;
@@ -194,7 +196,7 @@ public class MainDe5Des {
 	
 	/**
 	 * Évalue si la main de dés équivaut à 4 égaux.
-	 * @return - true si la main contient quatre dé egaux
+	 * @return - true si la main contient quatre dés égaux
 	 */
 	private boolean evaluerQuatreEgaux() {
 		byte[] compte = compterValeurDes();
@@ -208,7 +210,7 @@ public class MainDe5Des {
 	}
 	
 	/**
-	 * Évalue si la main de dés équivaut à une série courte soit 1,2,3,4 ou 2,3,4,5 ou 3,4,5,6
+	 * Évalue si la main de dés équivaut à une série courte soit 1,2,3,4 ; 2,3,4,5 ou 3,4,5,6
 	 * @return - true si la main contient une série courte
 	 */
 	private boolean evaluerSerieCourte() {
@@ -253,7 +255,7 @@ public class MainDe5Des {
 	
 	/**
 	 * Évalue si la main de dés équivaut à une paire.
-	 * @return - true si la main contien une paire
+	 * @return - true si la main contient une paire
 	 */
 	private boolean evaluerUnePaire() {
 		byte[] compte = compterValeurDes();
@@ -278,7 +280,7 @@ public class MainDe5Des {
 	 * Retourne la valeur visible du dé numéro "noDe" ou -1 si le numéro de dé n'est pas valide.
 	 * 
 	 * @param noDe
-	 * @return - la valeur visible du dé demander si ce numero n'est pas valide -1 sera reçut
+	 * @return - la valeur visible du dé demandé, ou -1 si le numéro de dé est invalide
 	 */
 	public byte getValeurDeNo(byte noDe) {
 		// hey nous avons trouvé ceci qui fait le travail en une ligne :D
@@ -287,6 +289,7 @@ public class MainDe5Des {
 	
 	/**
 	 * Utilise toStringMainDeDes
+	 * @return la représentation graphique de la main de dés
 	 */
 	public String toString() {
 		return toStringMainDeDes();
@@ -300,7 +303,7 @@ public class MainDe5Des {
 	 * @return - le string de la main
 	 */
 	public String toStringMainDeDes() {
-		return "No. du dé :  1   2   3   4   5   6\nValeur    : "
+		return "No. du dé :  1   2   3   4   5\nValeur    : "
 				+ mainDeDes[0] + " "
 				+ mainDeDes[1] + " "
 				+ mainDeDes[2] + " "
@@ -314,6 +317,6 @@ public class MainDe5Des {
 	 * @return - vrai si la main de dés équivaut à la séquence demandée, sinon faux
 	 */
 	private static boolean validerNoDe(byte noDe) {
-		return noDe > 0 && noDe < NBR_DE_DES;
+		return noDe > 0 && noDe <= NBR_DE_DES;
 	}
 }
