@@ -26,7 +26,7 @@ public class Joueur {
 		return(nom);
 	}
 	
-	public void setNom(String pNom) {
+	private void setNom(String pNom) {
 		if(validerNom(pNom)) {
 			nom=pNom;
 		}
@@ -36,7 +36,7 @@ public class Joueur {
 		return(pointage);
 	}
 	
-	public void setPointage(int pPointage){
+	private void setPointage(int pPointage){
 		if(validerPointage(pointage)) {
 			pointage=pPointage;
 		}
