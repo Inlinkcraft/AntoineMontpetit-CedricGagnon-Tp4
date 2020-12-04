@@ -24,7 +24,7 @@ public class JeuDeDes {
 		String nomDeJoueur = "";
 		do {
 			nomDeJoueur = Input.saisirString(message);
-		}while(Joueur.validerNom(nomDeJoueur));
+		}while(!Joueur.validerNom(nomDeJoueur));
 		return new Joueur(nomDeJoueur);
 	}
 	
