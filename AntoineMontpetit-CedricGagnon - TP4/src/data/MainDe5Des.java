@@ -2,6 +2,8 @@ package data;
 
 /**
  * 
+ * Classe représentant une main de 5 dés
+ * 
  * @author Antoine Montpetit
  * @version automne 2020
  * 
