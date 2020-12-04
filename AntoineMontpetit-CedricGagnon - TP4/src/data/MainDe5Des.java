@@ -300,12 +300,12 @@ public class MainDe5Des {
 	 * @return - le string de la main
 	 */
 	public String toStringMainDeDes() {
-		return "No. du dé :  1   2   3   4   5   6\nValeur    : ["
-				+ mainDeDes[0].getFaceVisible() + "] ["
-				+ mainDeDes[1].getFaceVisible() + "] ["
-				+ mainDeDes[2].getFaceVisible() + "] ["
-				+ mainDeDes[3].getFaceVisible() + "] ["
-				+ mainDeDes[4].getFaceVisible();
+		return "No. du dé :  1   2   3   4   5   6\nValeur    : "
+				+ mainDeDes[0] 
+				+ mainDeDes[1]
+				+ mainDeDes[2]
+				+ mainDeDes[3]
+				+ mainDeDes[4];
 	}
 	
 	/**
