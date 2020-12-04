@@ -15,7 +15,7 @@ public class InfoSelonSequenceDeDes {
 	 * @return - le pointage
 	 */
 	public static int pointage(SequenceDeDes sequence) {
-		int pointage = -1;
+		int pointage = 0;
 		
 		switch(sequence) {
 		case BRELAN:
@@ -53,7 +53,7 @@ public class InfoSelonSequenceDeDes {
 	 * @return - le message
 	 */
 	public static String message(SequenceDeDes sequence) {
-		String message = "error";
+		String message = "Vous n'avez rien";
 		
 		switch(sequence) {
 		case BRELAN:

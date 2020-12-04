@@ -7,8 +7,8 @@ package data;
  *
  */
 public class Joueur {
-	private static final int LONGUEUR_NOM_MAX = 3;
-	private static final int LONGUEUR_NOM_MIN = 40;
+	private static final int LONGUEUR_NOM_MAX = 20;
+	private static final int LONGUEUR_NOM_MIN = 3;
 	private String nom;
 	private static final String NOM_DEFAUT = "Bob";
 	private int pointage;

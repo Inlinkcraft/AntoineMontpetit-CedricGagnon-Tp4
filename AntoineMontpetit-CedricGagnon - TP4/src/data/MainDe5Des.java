@@ -57,7 +57,8 @@ public class MainDe5Des {
 	 * @param noDe - Index du dé à brasser
 	 */
 	public void brasserDeNo(byte noDe) {
-		mainDeDes[noDe].brasser();
+		if(validerNoDe(noDe))
+			mainDeDes[noDe-1].brasser();
 	}
 
 	/**
@@ -303,11 +304,11 @@ public class MainDe5Des {
 	 * @return - le string de la main
 	 */
 	public String toStringMainDeDes() {
-		return "No. du dé :  1   2   3   4   5\nValeur    : "
-				+ mainDeDes[0] + " "
-				+ mainDeDes[1] + " "
-				+ mainDeDes[2] + " "
-				+ mainDeDes[3] + " "
+		return "No. du dé :  1     2     3     4    5\nValeur      : "
+				+ mainDeDes[0] + "  "
+				+ mainDeDes[1] + "  "
+				+ mainDeDes[2] + "  "
+				+ mainDeDes[3] + "  "
 				+ mainDeDes[4];
 	}
 	
@@ -318,5 +319,9 @@ public class MainDe5Des {
 	 */
 	private static boolean validerNoDe(byte noDe) {
 		return noDe > 0 && noDe <= NBR_DE_DES;
+	}
+	public static void main(String[] args)
+	{
+		utilitaires.Output.afficherMessage(new MainDe5Des().toString());
 	}
 }
