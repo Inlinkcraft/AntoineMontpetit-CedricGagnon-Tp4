@@ -4,7 +4,6 @@ INDEX VERSION 1.131+C:\Users\Antoine\Desktop\Cegep\AntoineMontpetit-CedricGagnon
 3263897811.index
 1943575548.index
 1845031563.index
-3470140492.index
 1942359185.index
 1241298325.index
 2899478204.index
