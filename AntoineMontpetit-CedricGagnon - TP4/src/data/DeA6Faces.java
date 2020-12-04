@@ -1,6 +1,7 @@
 package data;
 
 /**
+ * Classe représentant un dé à jouer avec une face visible
  * 
  * @author Cedric Gagnon
  *
