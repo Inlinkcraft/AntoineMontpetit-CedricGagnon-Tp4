@@ -281,8 +281,8 @@ public class MainDe5Des {
 	 * @return - la valeur visible du dé demander si ce numero n'est pas valide -1 sera reçut
 	 */
 	public byte getValeurDeNo(byte noDe) {
-		// hey nous avons généré ceci qui fait le travail en une ligne :D
-		return (byte) (((noDe< mainDeDes.length && noDe >= 0) ? 1:0) * noDe+((noDe < mainDeDes.length && noDe >= 0) ? 1:0)-1);
+		// hey nous avons trouvé ceci qui fait le travail en une ligne :D
+		return (byte) (mainDeDes[Math.abs((validerNoDe(noDe) ? 1:0)*noDe-1)].getFaceVisible() * (validerNoDe(noDe) ? 1:0) + ((validerNoDe(noDe) ? 1:0) - 1));
 	}
 	
 	/**
