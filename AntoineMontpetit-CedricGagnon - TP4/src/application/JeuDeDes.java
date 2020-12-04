@@ -55,7 +55,7 @@ public class JeuDeDes
 	{
 		String prochainRelance="12345";
 		int currentRoll = 0;
-		int currentTour = 0;
+		//int currentTour = 0;
 
 		
 		while (currentRoll < NBR_TOUR)
@@ -136,10 +136,6 @@ public class JeuDeDes
 		else {
 			jouer();
 		}
-	
-		
-		int x=0;
-		//jouerTourJoueurCourant(joueur1);
 	}
 
 }
