@@ -66,6 +66,7 @@ public class JeuDeDes
 			
 			if (currentRoll < NBR_TOUR - 1)
 			{
+				
 				String msgPointsGagnes="\n\n"+InfoSelonSequenceDeDes.message(evaluerMainDeDesCourante())+" pour "+InfoSelonSequenceDeDes.pointage(evaluerMainDeDesCourante())+" points.";
 				String message = "Tour " + (currentRoll+1) + "/" + NBR_TOUR
 						+ " pour " + joueurCourant.getNom()
