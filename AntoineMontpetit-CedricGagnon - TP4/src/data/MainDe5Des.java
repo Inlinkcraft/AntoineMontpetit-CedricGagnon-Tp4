@@ -301,10 +301,10 @@ public class MainDe5Des {
 	 */
 	public String toStringMainDeDes() {
 		return "No. du dé :  1   2   3   4   5   6\nValeur    : "
-				+ mainDeDes[0] 
-				+ mainDeDes[1]
-				+ mainDeDes[2]
-				+ mainDeDes[3]
+				+ mainDeDes[0] + " "
+				+ mainDeDes[1] + " "
+				+ mainDeDes[2] + " "
+				+ mainDeDes[3] + " "
 				+ mainDeDes[4];
 	}
 	
