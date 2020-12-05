@@ -2,9 +2,9 @@ package data;
 
 /**
  * 
- * Classe représentant un joueur possédant un nom et un pointage
+ * Classe reprÃ©sentant un joueur possÃ©dant un nom et un pointage
  * 
- * @author Cédric Gagnon
+ * @author CÃ©dric Gagnon
  * @version automne 2020
  *
  */
@@ -41,8 +41,8 @@ public class Joueur
 	private static final int POINTAGE_MIN = 0;
 
 	/**
-	 * Met le pointage à zéro et donne le nom au joueur s'il est valide, sinon
-	 * nom par défaut.
+	 * Met le pointage Ã  zÃ©ro et donne le nom au joueur s'il est valide, sinon
+	 * nom par dÃ©faut.
 	 * 
 	 * @param pNom - Le nom du joueur
 	 */
@@ -103,10 +103,10 @@ public class Joueur
 	}
 
 	/**
-	 * Ajoute le pointage reçu en entrée, s'il est valide (>=0), à celui du
+	 * Ajoute le pointage reÃ©u en entrÃ©e, s'il est valide (>=0), Ã  celui du
 	 * joueur et retourne le nouveau pointage.
 	 * 
-	 * @param pointageDePlus - Le pointage a rajouté
+	 * @param pointageDePlus - Le pointage a rajoutÃ©
 	 * @return - Le nouveau pointage
 	 */
 	public int ajouterPointage(int pointageDePlus)
@@ -121,7 +121,7 @@ public class Joueur
 	/**
 	 * Valide le nom
 	 * 
-	 * @param pNom - le nom à valider
+	 * @param pNom - le nom Ã  valider
 	 * @return - true si ces valide
 	 */
 	public static boolean validerNom(String pNom)

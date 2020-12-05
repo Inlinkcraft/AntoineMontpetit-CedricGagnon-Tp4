@@ -8,7 +8,7 @@ import utilitaires.Input;
 import utilitaires.Output;
 
 /**
- * Classe permettant de gérer l'application jeu de dés
+ * Classe permettant de gÃ©rer l'application jeu de dÃ©s
  * 
  * @version automne 2020
  * 
@@ -42,8 +42,8 @@ public class JeuDeDes
 	 * Utilise "Input.saisirString(...)" du package utilitaires fourni. Saisit
 	 * le nom d'un joueur dans une boucle (tant que pas annuler et pas valide).
 	 * Le nom saisi ne contient pas d'espaces inutiles et est mis en majuscules.
-	 * Ensuite, crée un joueur avec le nom saisi (si valide). Si la saisie est
-	 * annulée, la méthode retourne null.
+	 * Ensuite, crÃ©e un joueur avec le nom saisi (si valide). Si la saisie est
+	 * annulÃ©e, la mÃ©thode retourne null.
 	 * 
 	 * @param message - Le message qui demande le nom du joueur
 	 * @return - Le joueur
@@ -68,9 +68,9 @@ public class JeuDeDes
 	/**
 	 * Utilise "Input.confirmerMessage(...)" et "Output.afficherMessage(...)".
 	 * Boucle principale pour jouer. Fait jouer les deux joueurs tant qu'il
-	 * veulent à tour de rôle. Lorsque le jeu se termine (joueur a répondu non à
-	 * la question "Voulez-vous jouer encore ?"), le pointage final des joueurs
-	 * est affiché ainsi que le message de fin.
+	 * veulent le tour de rÃ©Ã¨le. Lorsque le jeu se termine (joueur a rÃ©pondu non
+	 * Ã  la question "Voulez-vous jouer encore ?"), le pointage final des
+	 * joueurs est affichÃ© ainsi que le message de fin.
 	 */
 	private static void jouer()
 	{
@@ -81,7 +81,7 @@ public class JeuDeDes
 			jouerTourJoueurCourant(joueur2);
 		}
 		while (Input.confirmerMessage("Voulez-vous jouer encore?"));
-		Output.afficherMessage("Merci d'avoir utilisé cette application...\n\n"
+		Output.afficherMessage("Merci d'avoir utilisÃ© cette application...\n\n"
 				+ joueur1.getNom() + " vous avez " + joueur1.getPointage()
 				+ " point(s).\n" + joueur2.getNom() + " vous avez "
 				+ joueur2.getPointage() + " point(s).");
@@ -90,13 +90,13 @@ public class JeuDeDes
 
 	/**
 	 * Utilise "Input.saisirEntier(...)" et "Output.afficherMessage(...)".
-	 * Commence par brasser tous les dés de la main courante avant d'entrer dans
-	 * une boucle qui permet de faire jouer les 3 tours ou moins, au joueur reçu
-	 * en paramètre. Pour chaque tour, on affiche l'info du tour et la main du
-	 * joueur. On évalue la main de dés et on affiche les points s'il y en a. On
-	 * demande les numéros de dés à relancer et s'il y en a on brasse ces dés.
+	 * Commence par brasser tous les dÃ©s de la main courante avant d'entrer dans
+	 * une boucle qui permet de faire jouer les 3 tours ou moins, au joueur reÃ©u
+	 * en paramÃ©tre. Pour chaque tour, on affiche l'info du tour et la main du
+	 * joueur. On Ã©value la main de dÃ©s et on affiche les points s'il y en a. On
+	 * demande les numÃ©ros de dÃ©s et relancer et s'il y en a on brasse ces dÃ©s.
 	 * En terminant, on affiche l'info du tour, la main courante, les points de
-	 * la main s'il y en a sinon le message "Désolé, vous n'avez aucun gain :o("
+	 * la main s'il y en a sinon le message "DÃ©solÃ©, vous n'avez aucun gain :o("
 	 * 
 	 * @param joueurCourant
 	 */
@@ -122,11 +122,11 @@ public class JeuDeDes
 						+ " points.";
 				String message = "Tour " + (currentRoll + 1) + "/" + NBR_TOUR
 						+ " pour " + joueurCourant.getNom()
-						+ ", vous avez présentement "
+						+ ", vous avez prÃ©sentement "
 						+ joueurCourant.getPointage()
-						+ " point(s)\n\nVoici votre main de dés:\n\n"
+						+ " point(s)\n\nVoici votre main de dÃ©s:\n\n"
 						+ mainCourante.toString() + msgPointsGagnes
-						+ "\n\nChoisir le numéro des dés que vous voulez relancer (\"Annuler\" pour arrêter la saisie)!";
+						+ "\n\nChoisir le numÃ©ro des dÃ©s que vous voulez relancer (\"Annuler\" pour arrÃ©ter la saisie)!";
 				Integer temp = Input.saisirEntier(message);
 				prochainRelance = "";
 				if (temp != null)
@@ -142,14 +142,14 @@ public class JeuDeDes
 				if (InfoSelonSequenceDeDes
 						.pointage(evaluerMainDeDesCourante()) == 0)
 				{
-					msgPointsGagnes = "\n\nDésolé, vous n'avez aucun gain :o(";
+					msgPointsGagnes = "\n\nDÃ©solÃ©, vous n'avez aucun gain :o(";
 				}
 				String message = "Tour " + (currentRoll + 1) + "/" + NBR_TOUR
 						+ " pour " + joueurCourant.getNom()
-						+ ", vous avez présentement "
+						+ ", vous avez prÃ©sentement "
 						+ joueurCourant.ajouterPointage(InfoSelonSequenceDeDes
 								.pointage(evaluerMainDeDesCourante()))
-						+ " point(s)\n\nVoici votre main de dés:\n\n"
+						+ " point(s)\n\nVoici votre main de dÃ©s:\n\n"
 						+ mainCourante.toString() + "\n\n" + msgPointsGagnes;
 				Output.afficherMessage(message);
 			}
@@ -160,12 +160,12 @@ public class JeuDeDes
 	}
 
 	/**
-	 * Boucle permettant d'évaluer la main de dés courante pour toutes les
-	 * séquences de dés dans l'ordre décroissant du pointage des séquences. Elle
-	 * arrête son évaluation lorsqu'elle trouve une séquence valide (présente
+	 * Boucle permettant d'Ã©valuer la main de dÃ©s courante pour toutes les
+	 * sÃ©quences de dÃ©s dans l'ordre dÃ©croissant du pointage des sÃ©quences. Elle
+	 * arrÃ©te son Ã©valuation lorsqu'elle trouve une sÃ©quence valide (prÃ©sente
 	 * dans la main).
 	 * 
-	 * @return - Une séquence valide ou null si aucune.
+	 * @return - Une sÃ©quence valide ou null si aucune.
 	 */
 	private static SequenceDeDes evaluerMainDeDesCourante()
 	{
@@ -186,11 +186,11 @@ public class JeuDeDes
 	}
 
 	/**
-	 * Point d'entrée de l'application. La méthode crée le "joueur1" (méthode
-	 * creerJoueur) et si le "joueur1" est créé sans annulation, on crée le
-	 * "joueur2" de la même façon. Par la suite, si les deux joueurs sont créés,
-	 * elle appelle la méthode "jouer" pour entrer dans la boucle de jeu. Si un
-	 * des 2 joueurs n'a pas pu être créé l'application se termine avec un
+	 * Point d'entrÃ©e de l'application. La mÃ©thode crÃ©e le "joueur1" (mÃ©thode
+	 * creerJoueur) et si le "joueur1" est crÃ©Ã© sans annulation, on crÃ©e le
+	 * "joueur2" de la mÃ©me faÃ©on. Par la suite, si les deux joueurs sont crÃ©Ã©s,
+	 * elle appelle la mÃ©thode "jouer" pour entrer dans la boucle de jeu. Si un
+	 * des 2 joueurs n'a pas pu Ã©tre crÃ©Ã© l'application se termine avec un
 	 * message d'explication.
 	 * 
 	 * @param args - ?
@@ -214,7 +214,7 @@ public class JeuDeDes
 		else if (joueur2 == null)
 		{
 			Output.afficherMessage(
-					"Désoler, pour jouer, il faut saisir le nom de 2 joueurs!\n\nLe progrmme va se terminer...");
+					"DÃ©soler, pour jouer, il faut saisir le nom de 2 joueurs!\n\nLe progrmme va se terminer...");
 		}
 		else
 		{

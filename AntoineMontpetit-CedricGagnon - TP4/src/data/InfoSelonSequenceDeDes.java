@@ -1,7 +1,7 @@
 package data;
 
 /**
- * Classe de services sur une séquence de dés
+ * Classe de services sur une sÃ©quence de dÃ©s
  * 
  * @author Antoine
  *
@@ -11,7 +11,7 @@ public class InfoSelonSequenceDeDes
 {
 
 	/**
-	 * Retourne le pointage selon la séquence de dés reçue
+	 * Retourne le pointage selon la sÃ©quence de dÃ©s reÃ§ue
 	 * 
 	 * @param sequence - type de sequence a get le pointage
 	 * @return - le pointage
@@ -54,7 +54,7 @@ public class InfoSelonSequenceDeDes
 	}
 
 	/**
-	 * Retourne un message selon la séquence de dés reçue.
+	 * Retourne un message selon la sÃ©quence de dÃ©s reÃ§ue.
 	 * 
 	 * @param sequence - type de sequence a get le message
 	 * @return - le message
@@ -67,10 +67,10 @@ public class InfoSelonSequenceDeDes
 			switch (sequence)
 			{
 				case BRELAN:
-					message = "Vous avez trois dés pareils";
+					message = "Vous avez trois dÃ©s pareils";
 					break;
 				case CINQ_EGAUX:
-					message = "Vous avez cinq dés pareils";
+					message = "Vous avez cinq dÃ©s pareils";
 					break;
 				case DEUX_PAIRES:
 					message = "Vous avez deux paires";
@@ -79,13 +79,13 @@ public class InfoSelonSequenceDeDes
 					message = "Vous avez un brelan plus une paire";
 					break;
 				case QUATRE_EGAUX:
-					message = "Vous avez quatre dés pareils";
+					message = "Vous avez quatre dÃ©s pareils";
 					break;
 				case SERIE_COURTE:
-					message = "Vous avez une série courte";
+					message = "Vous avez une sÃ©rie courte";
 					break;
 				case SERIE_LONGUE:
-					message = "Vous avez une série longue";
+					message = "Vous avez une sÃ©rie longue";
 					break;
 				case UNE_PAIRE:
 					message = "Vous avez une paire";

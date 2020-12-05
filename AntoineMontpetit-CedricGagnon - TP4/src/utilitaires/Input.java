@@ -1,5 +1,5 @@
 /**
- * @author Jocelyn -- Cégep Limoilou
+ * @author Jocelyn -- CÃ©gep Limoilou
  *
  * @version 2013
  */
@@ -16,10 +16,10 @@ public class Input
 	/**
 	 * Saisir un entier. La saisie est non bloquante.
 	 *
-	 * @param pQuestion chaîne permettant de poser une question.
+	 * @param pQuestion chaÃ©ne permettant de poser une question.
 	 *
 	 * @return Integer, un objet entier (Integer) permettant de retourner la
-	 *         valeur ou "null" si l'utilisateur a décidé d'annuler la saisie.
+	 *         valeur ou "null" si l'utilisateur a dÃ©cidÃ© d'annuler la saisie.
 	 *
 	 */
 	public static Integer saisirEntier(String pQuestion)
@@ -31,7 +31,7 @@ public class Input
 		// Saisir tant que pas valide
 		do
 		{
-			// Boîte de dialogue de saisie
+			// BoÃ©te de dialogue de saisie
 			reponse = JOptionPane.showInputDialog(null, pQuestion);
 
 			if (reponse != null)
@@ -53,12 +53,12 @@ public class Input
 	}
 
 	/**
-	 * Saisir une chaîne de caractères. La saisie est non bloquante.
+	 * Saisir une chaÃ©ne de caractÃ©res. La saisie est non bloquante.
 	 *
-	 * @param pQuestion chaîne permettant de poser une question.
+	 * @param pQuestion chaÃ©ne permettant de poser une question.
 	 *
-	 * @return String un objet chaîne de caractères permettant de retourner la
-	 *         valeur ou "null" si l'utilisateur a décidé d'annuler la saisie.
+	 * @return String un objet chaÃ©ne de caractÃ©res permettant de retourner la
+	 *         valeur ou "null" si l'utilisateur a dÃ©cidÃ© d'annuler la saisie.
 	 */
 	public static String saisirString(String pQuestion)
 	{
@@ -69,7 +69,7 @@ public class Input
 		// Saisir tant que pas valide
 		do
 		{
-			// Boîte de dialogue de saisie
+			// BoÃ©te de dialogue de saisie
 			reponse = JOptionPane.showInputDialog(null, pQuestion);
 
 			if (reponse != null)
@@ -84,7 +84,7 @@ public class Input
 	}
 
 	/**
-	 * Permet d'afficher une question (message) dans une boîte de confirmation
+	 * Permet d'afficher une question (message) dans une boÃ©te de confirmation
 	 * avec les boutons oui et non
 	 *
 	 * @param pQuestion
@@ -94,7 +94,7 @@ public class Input
 	{
 		boolean confirme = true;
 
-		// Boîte de dialogue d'affichage
+		// BoÃ©te de dialogue d'affichage
 		if (JOptionPane.NO_OPTION == JOptionPane.showConfirmDialog(null,
 				pQuestion, "Confirmation", JOptionPane.YES_NO_OPTION))
 		{

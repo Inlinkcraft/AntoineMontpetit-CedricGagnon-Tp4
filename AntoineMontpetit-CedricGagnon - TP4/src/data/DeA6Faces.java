@@ -1,7 +1,7 @@
 package data;
 
 /**
- * Classe représentant un dé à jouer avec une face visible
+ * Classe reprÃ©sentant un dÃ© jouer avec une face visible
  * 
  * @author Cedric Gagnon
  *
@@ -31,7 +31,7 @@ public class DeA6Faces
 	public static final byte NBR_FACES = 6;
 
 	/**
-	 * Initialise la face visible du dé en le brassant
+	 * Initialise la face visible du dÃ© en le brassant
 	 */
 	public DeA6Faces()
 	{
@@ -39,10 +39,10 @@ public class DeA6Faces
 	}
 
 	/**
-	 * Initialise la face visible du dé avec la valeur reçue en entrée si elle
-	 * est valide sinon on brasse le dé
+	 * Initialise la face visible du dÃ© avec la valeur reÃ©ue en entrÃ©e si elle
+	 * est valide sinon on brasse le dÃ©
 	 * 
-	 * @param valeur - la valeur du dé
+	 * @param valeur - la valeur du dÃ©
 	 */
 	public DeA6Faces(byte valeur)
 	{
@@ -62,7 +62,7 @@ public class DeA6Faces
 	}
 
 	/**
-	 * Assigne une valeur à la face visible si elle est valide
+	 * Assigne une valeur Ã  la face visible si elle est valide
 	 * 
 	 * @param valeur - la face assigner
 	 */
@@ -86,7 +86,7 @@ public class DeA6Faces
 	}
 
 	/**
-	 * Assigne à la face visible du dé une valeur aléatoire entre les limites
+	 * Assigne Ã  la face visible du dÃ© une valeur alÃ©atoire entre les limites
 	 * permises
 	 */
 	public void brasser()
@@ -96,10 +96,10 @@ public class DeA6Faces
 	}
 
 	/**
-	 * Retourne vrai si 2 dés ont la même valeur pour leur face visible
+	 * Retourne vrai si 2 dÃ©s ont la mÃ©me valeur pour leur face visible
 	 * 
-	 * @param obj - l'autre dé comparer à
-	 * @return - true si les deux dée sont pareil
+	 * @param obj - l'autre dÃ© comparer Ã 
+	 * @return - true si les deux dÃ©e sont pareil
 	 */
 	public boolean equals(DeA6Faces obj)
 	{
@@ -117,7 +117,7 @@ public class DeA6Faces
 	}
 
 	/**
-	 * Sert à tester nos méthodes
+	 * Sert Ã  tester nos mÃ©thodes
 	 * 
 	 * @param args - ?
 	 */

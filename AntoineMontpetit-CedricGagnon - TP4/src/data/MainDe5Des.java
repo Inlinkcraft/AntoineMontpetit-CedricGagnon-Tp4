@@ -2,7 +2,7 @@ package data;
 
 /**
  * 
- * Classe représentant une main de 5 dés
+ * Classe reprÃ©sentant une main de 5 dÃ©s
  * 
  * @author Antoine Montpetit
  * @version automne 2020
@@ -12,17 +12,17 @@ public class MainDe5Des
 {
 
 	/**
-	 * main de dés
+	 * main de dÃ©s
 	 */
 	private DeA6Faces[] mainDeDes;
 
 	/**
-	 * Nombre de dés total
+	 * Nombre de dÃ©s total
 	 */
 	private static final byte NBR_DE_DES = 5;
 
 	/**
-	 * Crée le tableau de 5 dés et ajoute des dés dedans.
+	 * CrÃ©e le tableau de 5 dÃ©s et ajoute des dÃ©s dedans.
 	 */
 	public MainDe5Des()
 	{
@@ -30,12 +30,12 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Permet de construire une main de 5 dés à partir d'un vecteur de 5 valeurs
-	 * qui représentent les faces visibles des 5 dés. Utilise le constructeur de
-	 * dé avec paramètre. Très utile pour faire des tests de la présente classe
+	 * Permet de construire une main de 5 dÃ©s Ã© partir d'un vecteur de 5 valeurs
+	 * qui reprÃ©sentent les faces visibles des 5 dÃ©s. Utilise le constructeur de
+	 * dÃ© avec paramÃ©tre. TrÃ©s utile pour faire des tests de la prÃ©sente classe
 	 * 
 	 * @param tabFaceVsible - Un tableau de 5 valeurs, les faces visibles des
-	 *            dés.
+	 *            dÃ©s.
 	 */
 	public MainDe5Des(byte[] tabFaceVsible)
 	{
@@ -61,9 +61,9 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Brasse le dé dont le numéro est "noDe", s'il est valide.
+	 * Brasse le dÃ© dont le numÃ©ro est "noDe", s'il est valide.
 	 * 
-	 * @param noDe - Index du dé à brasser
+	 * @param noDe - Index du dÃ© Ã  brasser
 	 */
 	public void brasserDeNo(byte noDe)
 	{
@@ -72,12 +72,12 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Brasse chaque dé indiqué par son numéro dans la chaîne de caractères
-	 * reçue. Exemple si on reçoit la chaîne "235" on doit brasser les dés
-	 * numéro 2, 3 et 5. Vous trouverez dans la classe Character une méthode qui
-	 * retourne la valeur numérique d'un caractère
+	 * Brasse chaque dÃ© indiquÃ© par son numÃ©ro dans la chaÃ©ne de caractÃ©res
+	 * reÃ§ue. Exemple si on reÃ§oit la chaine "235" on doit brasser les dÃ©s
+	 * numÃ©ro 2, 3 et 5. Vous trouverez dans la classe Character une mÃ©thode qui
+	 * retourne la valeur numÃ©rique d'un caractÃ©re
 	 * 
-	 * @param infoDesABrasser - Dés à brasser
+	 * @param infoDesABrasser - DÃ©s Ã  brasser
 	 */
 	public void brasserMainDeDes(String infoDesABrasser)
 	{
@@ -89,22 +89,22 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Compte le nombre de dés selon la valeur de la face visible. Compte le
+	 * Compte le nombre de dÃ©s selon la valeur de la face visible. Compte le
 	 * nombre de 1, de 2, de 3 et ainsi de suite selon la face visible de chaque
-	 * dé de la main. Cette méthode sera utile à toutes les méthodes evaluer.
+	 * dÃ© de la main. Cette mÃ©thode sera utile Ã  toutes les mÃ©thodes evaluer.
 	 *
-	 * Exemple pour la main de 5 dés suivante:
+	 * Exemple pour la main de 5 dÃ©s suivante:
 	 * 
-	 * No. du dé : 1 2 3 4 5 Valeur : [4] [5] [1] [4] [3]
+	 * No. du dÃ© : 1 2 3 4 5 Valeur : [4] [5] [1] [4] [3]
 	 * 
 	 * Le tableau de sortie aurait les valeurs suivantes:
 	 * 
-	 * valeur du dé : 1 2 3 4 5 6 indice : 0 1 2 3 4 5 Nombre de fois: [1] [0]
-	 * [1] [2] [1] [0] La main possède donc un 1, zéro 2, un 3, deux 4, un 5 et
-	 * zéro 6
+	 * valeur du dÃ© : 1 2 3 4 5 6 indice : 0 1 2 3 4 5 Nombre de fois: [1] [0]
+	 * [1] [2] [1] [0] La main possÃ©de donc un 1, zÃ©ro 2, un 3, deux 4, un 5 et
+	 * zÃ©ro 6
 	 * 
-	 * @return - un tableau de byte dont chaque élément représente le nombre de
-	 *         dés d'une certaine valeur.
+	 * @return - un tableau de byte dont chaque Ã©lÃ©ment reprÃ©sente le nombre de
+	 *         dÃ©s d'une certaine valeur.
 	 */
 	private byte[] compterValeurDes()
 	{
@@ -118,7 +118,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Évalue si la main de dés équivaut à 3 égaux.
+	 * Ã©value si la main de dÃ©s Ã©quivaut Ã  3 Ã©gaux.
 	 * 
 	 * @return - true si la main contient un brelan
 	 */
@@ -137,7 +137,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Évalue si la main de dés équivaut à 5 égaux.
+	 * Ã©value si la main de dÃ©s Ã©quivaut Ã  5 Ã©gaux.
 	 * 
 	 * @return - true si la main a 5 chiffres pareils
 	 */
@@ -156,7 +156,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Évalue si la main de dés équivaut à 2 paires.
+	 * Ã©value si la main de dÃ©s Ã©quivaut Ã© 2 paires.
 	 * 
 	 * @return - true si la main contient deux paires
 	 */
@@ -183,7 +183,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Évalue si la main de dés équivaut à un brelan et une paire.
+	 * Ã©value si la main de dÃ©s Ã©quivaut Ã  un brelan et une paire.
 	 * 
 	 * @return - true si la main contient un brelan et une paire
 	 */
@@ -193,11 +193,11 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Évalue la main de dés selon la séquence reçue en paramètre. Se sert de
-	 * toutes les autres méthodes evaluer. L'ordre d'évaluation est important.
+	 * Ã©value la main de dÃ©s selon la sÃ©quence reÃ©ue en paramÃ©tre. Se sert de
+	 * toutes les autres mÃ©thodes evaluer. L'ordre d'Ã©valuation est important.
 	 * 
-	 * @param sequence - la séquence à évaluer
-	 * @return - true si la séquence demandée est contenue dans la main
+	 * @param sequence - la sÃ©quence Ã  Ã©valuer
+	 * @return - true si la sÃ©quence demandÃ©e est contenue dans la main
 	 */
 	public boolean evaluerMainDeDes(SequenceDeDes sequence)
 	{
@@ -234,9 +234,9 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Évalue si la main de dés équivaut à 4 égaux.
+	 * Ã©value si la main de dÃ©s Ã©quivaut Ã  4 Ã©gaux.
 	 * 
-	 * @return - true si la main contient quatre dés égaux
+	 * @return - true si la main contient quatre dÃ©s Ã©gaux
 	 */
 	private boolean evaluerQuatreEgaux()
 	{
@@ -253,10 +253,10 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Évalue si la main de dés équivaut à une série courte soit 1,2,3,4 ;
+	 * Ã©value si la main de dÃ©s Ã©quivaut Ã  une sÃ©rie courte soit 1,2,3,4 ;
 	 * 2,3,4,5 ou 3,4,5,6
 	 * 
-	 * @return - true si la main contient une série courte
+	 * @return - true si la main contient une sÃ©rie courte
 	 */
 	private boolean evaluerSerieCourte()
 	{
@@ -283,10 +283,10 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Évalue si la main de dés équivaut à une série longue soit 1,2,3,4,5 ou
+	 * Ã©value si la main de dÃ©s Ã©quivaut Ã  une sÃ©rie longue soit 1,2,3,4,5 ou
 	 * 2,3,4,5,6
 	 * 
-	 * @return - true si la main contient une série longue
+	 * @return - true si la main contient une sÃ©rie longue
 	 */
 	private boolean evaluerSerieLongue()
 	{
@@ -313,7 +313,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Évalue si la main de dés équivaut à une paire.
+	 * Ã©value si la main de dÃ©s Ã©quivaut Ã  une paire.
 	 * 
 	 * @return - true si la main contient une paire
 	 */
@@ -332,9 +332,9 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Retourne le nombre de dés dans la main.
+	 * Retourne le nombre de dÃ©s dans la main.
 	 * 
-	 * @return - le nombre de dés dans la main
+	 * @return - le nombre de dÃ©s dans la main
 	 */
 	public byte getNbrDes()
 	{
@@ -342,16 +342,16 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Retourne la valeur visible du dé numéro "noDe" ou -1 si le numéro de dé
+	 * Retourne la valeur visible du dÃ© numÃ©ro "noDe" ou -1 si le numÃ©ro de dÃ©
 	 * n'est pas valide.
 	 * 
 	 * @param noDe
-	 * @return - la valeur visible du dé demandé, ou -1 si le numéro de dé est
+	 * @return - la valeur visible du dÃ© demandÃ©, ou -1 si le numÃ©ro de dÃ© est
 	 *         invalide
 	 */
 	public byte getValeurDeNo(byte noDe)
 	{
-		// hey nous avons trouvé ceci qui fait le travail en une ligne :D
+		// hey nous avons trouvÃ© ceci qui fait le travail en une ligne :D
 		return (byte) (mainDeDes[Math
 				.abs((validerNoDe(noDe) ? 1 : 0) * noDe - 1)].getFaceVisible()
 				* (validerNoDe(noDe) ? 1 : 0)
@@ -361,7 +361,7 @@ public class MainDe5Des
 	/**
 	 * Utilise toStringMainDeDes
 	 * 
-	 * @return la représentation graphique de la main de dés
+	 * @return la reprÃ©sentation graphique de la main de dÃ©s
 	 */
 	public String toString()
 	{
@@ -369,23 +369,23 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Retourne une chaîne de caractères qui représente la main de dés selon le
-	 * format suivant: No. du dé : 1 2 3 4 5 Valeur : [4] [5] [1] [4] [3]
+	 * Retourne une chaÃ©ne de caractÃ©res qui reprÃ©sente la main de dÃ©s selon le
+	 * format suivant: No. du dÃ© : 1 2 3 4 5 Valeur : [4] [5] [1] [4] [3]
 	 * 
 	 * @return - le string de la main
 	 */
 	public String toStringMainDeDes()
 	{
-		return "No. du dé :  1     2     3     4    5\nValeur      : "
+		return "No. du dÃ© :  1     2     3     4    5\nValeur      : "
 				+ mainDeDes[0] + "  " + mainDeDes[1] + "  " + mainDeDes[2]
 				+ "  " + mainDeDes[3] + "  " + mainDeDes[4];
 	}
 
 	/**
-	 * Valide si le "noDe" est bien entre 1 et le maximun de dés dans la main.
+	 * Valide si le "noDe" est bien entre 1 et le maximun de dÃ©s dans la main.
 	 * 
-	 * @param noDe - le nombre de dés à valider
-	 * @return - vrai si la main de dés équivaut à la séquence demandée, sinon
+	 * @param noDe - le nombre de dÃ©s Ã  valider
+	 * @return - vrai si la main de dÃ©s Ã©quivaut Ã  la sÃ©quence demandÃ©e, sinon
 	 *         faux
 	 */
 	private static boolean validerNoDe(byte noDe)
