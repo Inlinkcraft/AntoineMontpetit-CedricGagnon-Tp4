@@ -7,56 +7,65 @@ package data;
  *
  * @version automne 2020
  */
-public class InfoSelonSequenceDeDes {
-	
+public class InfoSelonSequenceDeDes
+{
+
 	/**
 	 * Retourne le pointage selon la séquence de dés reçue
+	 * 
 	 * @param sequence - type de sequence a get le pointage
 	 * @return - le pointage
 	 */
-	public static int pointage(SequenceDeDes sequence) {
+	public static int pointage(SequenceDeDes sequence)
+	{
 		int pointage = 0;
-		if(sequence!=null) {
-			switch(sequence) {
-			case BRELAN:
-				pointage = 40;
-				break;
-			case CINQ_EGAUX:
-				pointage = 100;
-				break;
-			case DEUX_PAIRES:
-				pointage = 20;
-				break;
-			case FULL:
-				pointage = 60;
-				break;
-			case QUATRE_EGAUX:
-				pointage = 70;
-				break;
-			case SERIE_COURTE:
-				pointage = 30;
-				break;
-			case SERIE_LONGUE:
-				pointage = 50;
-				break;
-			case UNE_PAIRE:
-				pointage = 10;
-				break;
+		if (sequence != null)
+		{
+			switch (sequence)
+			{
+				case BRELAN:
+					pointage = 40;
+					break;
+				case CINQ_EGAUX:
+					pointage = 100;
+					break;
+				case DEUX_PAIRES:
+					pointage = 20;
+					break;
+				case FULL:
+					pointage = 60;
+					break;
+				case QUATRE_EGAUX:
+					pointage = 70;
+					break;
+				case SERIE_COURTE:
+					pointage = 30;
+					break;
+				case SERIE_LONGUE:
+					pointage = 50;
+					break;
+				case UNE_PAIRE:
+					pointage = 10;
+					break;
 			}
 		}
-		
+
 		return pointage;
 	}
-	
+
 	/**
 	 * Retourne un message selon la séquence de dés reçue.
+	 * 
 	 * @param sequence - type de sequence a get le message
 	 * @return - le message
 	 */
-	public static String message(SequenceDeDes sequence) {
+	public static String message(SequenceDeDes sequence)
+	{
 		String message = "Vous n'avez rien";
-		if(sequence!=null) {
-			switch(sequence) {
+		if (sequence != null)
+		{
+			switch (sequence)
+			{
 				case BRELAN:
 					message = "Vous avez trois dés pareils";
 					break;
@@ -83,7 +92,7 @@ public class InfoSelonSequenceDeDes {
 					break;
 			}
 		}
-		
+
 		return message;
 	}
 }
