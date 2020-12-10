@@ -18,7 +18,7 @@ public class DeA6Faces
 	/**
 	 * Minimum de face
 	 */
-	private static final Byte FACE_MIN = 1;
+	private static final byte FACE_MIN = 1;
 
 	/**
 	 * La face qui est visible

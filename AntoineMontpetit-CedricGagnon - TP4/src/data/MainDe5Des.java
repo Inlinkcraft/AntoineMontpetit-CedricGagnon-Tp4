@@ -106,7 +106,7 @@ public class MainDe5Des
 	 * @return - un tableau de byte dont chaque élément représente le nombre de
 	 *         dés d'une certaine valeur.
 	 */
-	private byte[] compterValeurDes()
+	private byte[] compterValeursDes()
 	{
 		byte[] compte =
 		{ 0, 0, 0, 0, 0, 0 };
@@ -124,7 +124,7 @@ public class MainDe5Des
 	 */
 	private boolean evaluerBrelan()
 	{
-		byte[] compte = compterValeurDes();
+		byte[] compte = compterValeursDes();
 		boolean estBrelan = false;
 		for (int i = 0; i < compte.length; i++)
 		{
@@ -143,7 +143,7 @@ public class MainDe5Des
 	 */
 	private boolean evaluerCinqEgaux()
 	{
-		byte[] compte = compterValeurDes();
+		byte[] compte = compterValeursDes();
 		boolean estCinqEgaux = false;
 		for (int i = 0; i < compte.length; i++)
 		{
@@ -162,7 +162,7 @@ public class MainDe5Des
 	 */
 	private boolean evaluerDeuxPaires()
 	{
-		byte[] compte = compterValeurDes();
+		byte[] compte = compterValeursDes();
 		boolean estPair = false;
 		boolean estDeuxPair = false;
 		for (int i = 0; i < compte.length; i++)
@@ -240,7 +240,7 @@ public class MainDe5Des
 	 */
 	private boolean evaluerQuatreEgaux()
 	{
-		byte[] compte = compterValeurDes();
+		byte[] compte = compterValeursDes();
 		boolean estQuatreEgaux = false;
 		for (int i = 0; i < compte.length; i++)
 		{
@@ -260,7 +260,7 @@ public class MainDe5Des
 	 */
 	private boolean evaluerSerieCourte()
 	{
-		byte[] compte = compterValeurDes();
+		byte[] compte = compterValeursDes();
 		boolean estSerieQuatre = false;
 		int suite = 0;
 		for (int i = 0; i < compte.length; i++)
@@ -290,7 +290,7 @@ public class MainDe5Des
 	 */
 	private boolean evaluerSerieLongue()
 	{
-		byte[] compte = compterValeurDes();
+		byte[] compte = compterValeursDes();
 		boolean estSerieCinq = false;
 		int suite = 0;
 		for (int i = 0; i < compte.length; i++)
@@ -319,7 +319,7 @@ public class MainDe5Des
 	 */
 	private boolean evaluerUnePaire()
 	{
-		byte[] compte = compterValeurDes();
+		byte[] compte = compterValeursDes();
 		boolean estPair = false;
 		for (int i = 0; i < compte.length; i++)
 		{
