@@ -90,7 +90,7 @@ public class Joueur
 	}
 
 	/**
-	 * Assigne un nouveau pointage au joueur s'il est valide (>=0)
+	 * Assigne un nouveau pointage au joueur s'il est valide plus grand ou éguale 0
 	 * 
 	 * @param pPointage - le pointage à assigner
 	 */
@@ -103,7 +103,7 @@ public class Joueur
 	}
 
 	/**
-	 * Ajoute le pointage reçu en entrée, s'il est valide (>=0), à celui du
+	 * Ajoute le pointage reçu en entrée, s'il est valide plus grand ou éguale, à celui du
 	 * joueur et retourne le nouveau pointage.
 	 * 
 	 * @param pointageDePlus - Le pointage à rajouter
@@ -131,7 +131,7 @@ public class Joueur
 	}
 
 	/**
-	 * Valide la valeur du pointage (>=0).
+	 * Valide la valeur du pointage plus grand ou éguale.
 	 * 
 	 * @param pPointage - le pointage à valider
 	 * @return - true si le pointage est valide

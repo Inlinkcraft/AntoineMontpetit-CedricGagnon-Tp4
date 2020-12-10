@@ -84,11 +84,11 @@ public class Input
 	}
 
 	/**
-	 * Permet d'afficher une question (message) dans une boéte de confirmation
+	 * Permet d'afficher une question (message) dans une boite de confirmation
 	 * avec les boutons oui et non
 	 *
-	 * @param pQuestion
-	 * @return
+	 * @param pQuestion - La question sous forme de string
+	 * @return - true si le joueur a cliké sur oui.
 	 */
 	public static boolean confirmerMessage(String pQuestion)
 	{
