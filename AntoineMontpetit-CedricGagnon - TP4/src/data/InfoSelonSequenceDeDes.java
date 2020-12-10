@@ -13,7 +13,7 @@ public class InfoSelonSequenceDeDes
 	/**
 	 * Retourne le pointage selon la séquence de dés reçue
 	 * 
-	 * @param sequence - type de sequence a get le pointage
+	 * @param sequence - type de séquence de laquelle retourner le pointage
 	 * @return - le pointage
 	 */
 	public static int pointage(SequenceDeDes sequence)
@@ -56,7 +56,7 @@ public class InfoSelonSequenceDeDes
 	/**
 	 * Retourne un message selon la séquence de dés reçue.
 	 * 
-	 * @param sequence - type de sequence a get le message
+	 * @param sequence - type de sequence pour laquelle retourner le message
 	 * @return - le message
 	 */
 	public static String message(SequenceDeDes sequence)

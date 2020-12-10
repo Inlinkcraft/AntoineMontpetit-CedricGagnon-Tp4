@@ -22,7 +22,7 @@ public class MainDe5Des
 	private static final byte NBR_DE_DES = 5;
 
 	/**
-	 * Crée le tableau de 5 dés et ajoute des dés dedans.
+	 * Crée le tableau de 5 dés et y ajoute des dés.
 	 */
 	public MainDe5Des()
 	{
@@ -30,9 +30,9 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Permet de construire une main de 5 dés é partir d'un vecteur de 5 valeurs
+	 * Permet de construire une main de 5 dés à partir d'un vecteur de 5 valeurs
 	 * qui représentent les faces visibles des 5 dés. Utilise le constructeur de
-	 * dé avec paramétre. Trés utile pour faire des tests de la présente classe
+	 * dé avec paramètre. Très utile pour faire des tests de la présente classe
 	 * 
 	 * @param tabFaceVsible - Un tableau de 5 valeurs, les faces visibles des
 	 *            dés.
@@ -61,7 +61,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Brasse le dé dont le numéro est "noDe", s'il est valide.
+	 * Brasse le dé dont l'index correspond au paramètre "noDe", s'il est valide.
 	 * 
 	 * @param noDe - Index du dé à brasser
 	 */
@@ -118,7 +118,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * évalue si la main de dés équivaut à 3 égaux.
+	 * Évalue si la main de dés équivaut à 3 égaux.
 	 * 
 	 * @return - true si la main contient un brelan
 	 */
@@ -137,7 +137,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * évalue si la main de dés équivaut à 5 égaux.
+	 * Évalue si la main de dés équivaut à 5 égaux.
 	 * 
 	 * @return - true si la main a 5 chiffres pareils
 	 */
@@ -156,7 +156,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * évalue si la main de dés équivaut é 2 paires.
+	 * Évalue si la main de dés équivaut à 2 paires.
 	 * 
 	 * @return - true si la main contient deux paires
 	 */
@@ -183,7 +183,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * évalue si la main de dés équivaut à un brelan et une paire.
+	 * Évalue si la main de dés équivaut à un brelan et une paire.
 	 * 
 	 * @return - true si la main contient un brelan et une paire
 	 */
@@ -193,7 +193,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * évalue la main de dés selon la séquence reéue en paramétre. Se sert de
+	 * Évalue la main de dés selon la séquence reçue en paramètre. Se sert de
 	 * toutes les autres méthodes evaluer. L'ordre d'évaluation est important.
 	 * 
 	 * @param sequence - la séquence à évaluer
@@ -234,7 +234,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * évalue si la main de dés équivaut à 4 égaux.
+	 * Évalue si la main de dés équivaut à 4 égaux.
 	 * 
 	 * @return - true si la main contient quatre dés égaux
 	 */
@@ -253,7 +253,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * évalue si la main de dés équivaut à une série courte soit 1,2,3,4 ;
+	 * Évalue si la main de dés équivaut à une série courte soit 1,2,3,4 ;
 	 * 2,3,4,5 ou 3,4,5,6
 	 * 
 	 * @return - true si la main contient une série courte
@@ -283,7 +283,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * évalue si la main de dés équivaut à une série longue soit 1,2,3,4,5 ou
+	 * Évalue si la main de dés équivaut à une série longue soit 1,2,3,4,5 ou
 	 * 2,3,4,5,6
 	 * 
 	 * @return - true si la main contient une série longue
@@ -313,7 +313,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * évalue si la main de dés équivaut à une paire.
+	 * Évalue si la main de dés équivaut à une paire.
 	 * 
 	 * @return - true si la main contient une paire
 	 */
@@ -342,16 +342,15 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Retourne la valeur visible du dé numéro "noDe" ou -1 si le numéro de dé
-	 * n'est pas valide.
+	 * Retourne la valeur visible du dé à l'index "noDe" ou -1 si l'index est invalide
 	 * 
-	 * @param noDe
-	 * @return - la valeur visible du dé demandé, ou -1 si le numéro de dé est
+	 * @param noDe - l'index du dé duquel retourner la valeur
+	 * @return - la valeur visible du dé demandé, ou -1 si l'index de dé est
 	 *         invalide
 	 */
 	public byte getValeurDeNo(byte noDe)
 	{
-		// hey nous avons trouvé ceci qui fait le travail en une ligne :D
+		// hey nous avons trouvé/assemblé ceci qui fait le travail en une ligne :D
 		return (byte) (mainDeDes[Math
 				.abs((validerNoDe(noDe) ? 1 : 0) * noDe - 1)].getFaceVisible()
 				* (validerNoDe(noDe) ? 1 : 0)
@@ -369,7 +368,7 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Retourne une chaéne de caractéres qui représente la main de dés selon le
+	 * Retourne une chaine de caractères qui représente la main de dés selon le
 	 * format suivant: No. du dé : 1 2 3 4 5 Valeur : [4] [5] [1] [4] [3]
 	 * 
 	 * @return - le string de la main
@@ -382,10 +381,10 @@ public class MainDe5Des
 	}
 
 	/**
-	 * Valide si le "noDe" est bien entre 1 et le maximun de dés dans la main.
+	 * Valide si le "noDe" est bien entre 1 et le maximum de dés dans la main.
 	 * 
-	 * @param noDe - le nombre de dés à valider
-	 * @return - vrai si la main de dés équivaut à la séquence demandée, sinon
+	 * @param noDe - l'index à valider
+	 * @return - vrai si l'index est dans les bornes, sinon
 	 *         faux
 	 */
 	private static boolean validerNoDe(byte noDe)

@@ -11,12 +11,12 @@ package data;
 public class Joueur
 {
 	/**
-	 * La Longueur maximum du nom
+	 * La longueur maximum du nom
 	 */
 	private static final int LONGUEUR_NOM_MAX = 20;
 
 	/**
-	 * La longueur mininimu du nom
+	 * La longueur minimum du nom
 	 */
 	private static final int LONGUEUR_NOM_MIN = 3;
 
@@ -26,7 +26,7 @@ public class Joueur
 	private String nom;
 
 	/**
-	 * Le nom par default
+	 * Le nom par défaut
 	 */
 	private static final String NOM_DEFAUT = "Bob";
 
@@ -69,7 +69,7 @@ public class Joueur
 	/**
 	 * Assigne un nouveau nom au joueur s'il est valide.
 	 * 
-	 * @param pNom - Le nom de a set
+	 * @param pNom - Le nom à assigner
 	 */
 	private void setNom(String pNom)
 	{
@@ -92,7 +92,7 @@ public class Joueur
 	/**
 	 * Assigne un nouveau pointage au joueur s'il est valide (>=0)
 	 * 
-	 * @param pPointage - le pointage a set
+	 * @param pPointage - le pointage à assigner
 	 */
 	private void setPointage(int pPointage)
 	{
@@ -103,10 +103,10 @@ public class Joueur
 	}
 
 	/**
-	 * Ajoute le pointage reéu en entrée, s'il est valide (>=0), à celui du
+	 * Ajoute le pointage reçu en entrée, s'il est valide (>=0), à celui du
 	 * joueur et retourne le nouveau pointage.
 	 * 
-	 * @param pointageDePlus - Le pointage a rajouté
+	 * @param pointageDePlus - Le pointage à rajouter
 	 * @return - Le nouveau pointage
 	 */
 	public int ajouterPointage(int pointageDePlus)
@@ -122,7 +122,7 @@ public class Joueur
 	 * Valide le nom
 	 * 
 	 * @param pNom - le nom à valider
-	 * @return - true si ces valide
+	 * @return - true si il est valide
 	 */
 	public static boolean validerNom(String pNom)
 	{
@@ -133,8 +133,8 @@ public class Joueur
 	/**
 	 * Valide la valeur du pointage (>=0).
 	 * 
-	 * @param pPointage - le pointage a valider
-	 * @return - true si le ce pointage est vrai
+	 * @param pPointage - le pointage à valider
+	 * @return - true si le pointage est valide
 	 */
 	private static boolean validerPointage(int pPointage)
 	{
@@ -142,7 +142,7 @@ public class Joueur
 	}
 
 	/**
-	 * Retourne l'info du joueur sous cette forme: Arthur : 0
+	 * Retourne l'info du joueur sous cette forme: "Arthur : 0"
 	 */
 	public String toString()
 	{

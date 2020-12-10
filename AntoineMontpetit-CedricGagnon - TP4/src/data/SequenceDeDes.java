@@ -1,7 +1,7 @@
 package data;
 
 /**
- * énumération contenant les diférentes séquences de dés posisbles
+ * énumération contenant les différentes séquences de dés possibles
  * 
  * @author Antoine Montpetit
  * @version automne 2020

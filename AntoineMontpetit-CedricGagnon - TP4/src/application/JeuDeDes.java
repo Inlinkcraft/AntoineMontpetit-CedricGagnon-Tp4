@@ -19,7 +19,7 @@ public class JeuDeDes
 {
 
 	/**
-	 * Le nombre de tour ?
+	 * Le nombre de tours par joueur
 	 */
 	private static final int NBR_TOUR = 3;
 
@@ -68,7 +68,7 @@ public class JeuDeDes
 	/**
 	 * Utilise "Input.confirmerMessage(...)" et "Output.afficherMessage(...)".
 	 * Boucle principale pour jouer. Fait jouer les deux joueurs tant qu'il
-	 * veulent le tour de réèle. Lorsque le jeu se termine (joueur a répondu non
+	 * veulent le tour de rôle. Lorsque le jeu se termine (joueur a répondu non
 	 * à la question "Voulez-vous jouer encore ?"), le pointage final des
 	 * joueurs est affiché ainsi que le message de fin.
 	 */
@@ -188,12 +188,12 @@ public class JeuDeDes
 	/**
 	 * Point d'entrée de l'application. La méthode crée le "joueur1" (méthode
 	 * creerJoueur) et si le "joueur1" est créé sans annulation, on crée le
-	 * "joueur2" de la méme faéon. Par la suite, si les deux joueurs sont créés,
+	 * "joueur2" de la même façon. Par la suite, si les deux joueurs sont créés,
 	 * elle appelle la méthode "jouer" pour entrer dans la boucle de jeu. Si un
 	 * des 2 joueurs n'a pas pu étre créé l'application se termine avec un
 	 * message d'explication.
 	 * 
-	 * @param args - ?
+	 * @param args - n/a
 	 */
 	public static void main(String[] args)
 	{

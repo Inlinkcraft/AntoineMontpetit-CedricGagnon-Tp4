@@ -26,7 +26,7 @@ public class DeA6Faces
 	private byte faceVisible;
 
 	/**
-	 * Le nombre de face par default
+	 * Le nombre de faces par default
 	 */
 	public static final byte NBR_FACES = 6;
 
@@ -39,7 +39,7 @@ public class DeA6Faces
 	}
 
 	/**
-	 * Initialise la face visible du dé avec la valeur reéue en entrée si elle
+	 * Initialise la face visible du dé avec la valeur reçue en entrée si elle
 	 * est valide sinon on brasse le dé
 	 * 
 	 * @param valeur - la valeur du dé
@@ -64,7 +64,7 @@ public class DeA6Faces
 	/**
 	 * Assigne une valeur à la face visible si elle est valide
 	 * 
-	 * @param valeur - la face assigner
+	 * @param valeur - la face assignée
 	 */
 	private void setFaceVisible(byte valeur)
 	{
@@ -77,7 +77,7 @@ public class DeA6Faces
 	/**
 	 * Valide la valeur de la face visible selon le nombre de faces
 	 * 
-	 * @param valeur - La valeur de la face a valider
+	 * @param valeur - La valeur de la face à valider
 	 * @return - true si la face est valide
 	 */
 	private boolean validerFaceVisible(byte valeur)
@@ -98,8 +98,8 @@ public class DeA6Faces
 	/**
 	 * Retourne vrai si 2 dés ont la méme valeur pour leur face visible
 	 * 
-	 * @param obj - l'autre dé comparer à
-	 * @return - true si les deux dée sont pareil
+	 * @param obj - l'autre dé à comparer
+	 * @return - true si les deux dés sont pareils
 	 */
 	public boolean equals(DeA6Faces obj)
 	{
@@ -107,7 +107,7 @@ public class DeA6Faces
 	}
 
 	/**
-	 * Retourne la valeur de la face visible sous cette forme: [3]
+	 * Retourne la valeur de la face visible sous cette forme: "[3]"
 	 * 
 	 * @return - le string sous cette forme [0]
 	 */
@@ -119,7 +119,7 @@ public class DeA6Faces
 	/**
 	 * Sert à tester nos méthodes
 	 * 
-	 * @param args - ?
+	 * @param args - n/a
 	 */
 	public static void main(String[] args)
 	{
